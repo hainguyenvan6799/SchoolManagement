@@ -1,0 +1,7 @@
+composer require laravel/ui
+php artisan ui react
+
+laravel excel:
+use Maatwebsite\Excel\Concerns\SkipsOnError; khi import dữ liệu trong file excel, nếu gặp lỗi thì bỏ qua lỗi ở dòng đó
+và tiếp tục import record tiếp theo
+use Maatwebsite\Excel\Concerns\SkipsErrors; // bỏ qua lỗi và trả về lỗi sau cùng
