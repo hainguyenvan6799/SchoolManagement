@@ -3,23 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Imports\UsersImport;
-use Maatwebsite\Excel\Facades\Excel;
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
-class UserController extends Controller
+class AuthenticationController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-        $users = User::all();
-        return $users;
+        if(Auth::attempt(['email'=>$request->email, 'password'=>$request->password]))
+        {
+            // echo "Dang nhap thanh cong";
+            return true;
+        }
+        else
+        {
+            // echo "Đăng nhập thất bại.";
+            return false;
+        }
     }
 
     /**
@@ -40,29 +45,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        // $file = $request->file();
-        // Excel::import(new UsersImport, $request->file('file'));
-        $file = $request->file('file')->store('import');
-        $import = new UsersImport();
-        
-        $import->import($file);
-        $failures = $import->failures();
-     
-            // foreach ($failures as $failure) {
-            // // print_r($failure->row()); // row that went wrong
-            // // print_r($failure->attribute()); // either heading key (if using heading row concern) or column index
-            // // print_r($failure->errors()); // Actual error messages from Laravel validator
-            // // print_r($failure->values()); // The values of the row that has failed.
-            // echo "You have an error on row " . $failure->row() . ". ";
-            //     foreach($failure->errors() as $err)
-            //     {
-            //         echo $err;
-            //     }
-            // }
-        return $failures;
-        // return $errors;
-        // return $import->errors();
-        
+        //
     }
 
     /**

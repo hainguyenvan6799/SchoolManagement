@@ -51,7 +51,7 @@ export default class Form extends Component{
         return (
             <form onSubmit={(event) => this.onSubmitForm(event)}>
             <ErrorsAlert errors={this.state.errors}/>
-                <input type="file" name="file" onChange={(event) => this.onChangeForm(event)}/>
+                <input type="file" onChange={(event) => this.onChangeForm(event)} />
                 <button className="btn btn-primary">Submit</button>
             </form>
         )

@@ -5,3 +5,34 @@ laravel excel:
 use Maatwebsite\Excel\Concerns\SkipsOnError; khi import dữ liệu trong file excel, nếu gặp lỗi thì bỏ qua lỗi ở dòng đó
 và tiếp tục import record tiếp theo
 use Maatwebsite\Excel\Concerns\SkipsErrors; // bỏ qua lỗi và trả về lỗi sau cùng
+
+tải thư viện cho css trong react
+npm i css-loader style-loader --save-dev
+
+https://github.com/paouriel/laravel-mongodb-transaction-fix
+php artisan fix:transaction
+
+install react router dom
+npm install --save react-router-dom
+
+Minimum eight characters, at least one uppercase letter, one lowercase letter and one number:
+"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
+
+Minimum eight characters, at least one letter and one number:
+
+"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+Minimum eight characters, at least one letter, one number and one special character:
+
+"^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+Minimum eight characters, at least one uppercase letter, one lowercase letter and one number:
+
+"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
+Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character:
+
+"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+Minimum eight and maximum 10 characters, at least one uppercase letter, one lowercase letter, one number and one special character:
+
+"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$"
+
+npm install redux –save
+ npm install react-redux –save (kết nối react vs redux)

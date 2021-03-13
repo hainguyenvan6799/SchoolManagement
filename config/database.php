@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'pgsql'),
+    'default' => env('DB_CONNECTION', 'mongodb'),
 
     /*
     |--------------------------------------------------------------------------
@@ -34,6 +34,34 @@ return [
     */
 
     'connections' => [
+        // 'mongodb' => [
+        //     'driver' => 'mongodb',
+        //     'host' => env('DB_HOST', 'shard-00-01.vdgji.mongodb.net'),
+        //     'port' => env('DB_PORT', 27017),
+        //     'database' => env('DB_DATABASE', 'laravel_react'),
+        //     'username' => env('DB_USERNAME', 'laravel'),
+        //     'password' => env('DB_PASSWORD', 'dZ7qLK8ntXExi8tr'),
+        //     'options' => [
+        //         // here you can pass more settings to the Mongo Driver Manager
+        //         // see https://www.php.net/manual/en/mongodb-driver-manager.construct.php under "Uri Options" for a list of complete parameters that you can use
+        
+        //         'database' => env('DB_AUTHENTICATION_DATABASE', 'admin'), // required with Mongo 3+
+        //     ],
+        // ],
+        // 'mongodb' => [
+        //     'driver'   => 'mongodb',
+        //     'host'     => env('MONGO_DB_HOST', 'test-shard-00-01.vdgji.mongodb.net'),
+        //     'port'     => env('MONGO_DB_PORT', 27017),
+        //     'database' => env('MONGO_DB_DATABASE'),
+        //     'username' => env('MONGO_DB_USERNAME'),
+        //     'password' => env('MONGO_DB_PASSWORD'),
+        //     'options'  => []
+        // ],
+        'mongodb' => [
+            'driver' => 'mongodb',
+            'dsn' => 'mongodb+srv://laravel:dZ7qLK8ntXExi8tr@test.vdgji.mongodb.net/laravel?retryWrites=true&w=majority',
+            'database' => env('DB_DATABASE', 'laravel'),
+        ],
 
         'sqlite' => [
             'driver' => 'sqlite',
@@ -66,11 +94,11 @@ return [
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', '5433'),
-            'database' => env('DB_DATABASE', 'laravel'),
-            'username' => env('DB_USERNAME', 'laravel'),
-            'password' => env('DB_PASSWORD', '123456'),
+            'host' => env('DB_HOST', '127.0.0.1'),
+            'port' => env('DB_PORT', '5432'),
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,

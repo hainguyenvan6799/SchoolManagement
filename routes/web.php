@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\MongoTestController;
+use Illuminate\Support\Facades\Auth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +23,20 @@ Route::get('/', function () {
 });
 
 Route::post('/user/import', [UserController::class, 'store']);
+
+Route::get('/user/get_list_users', [UserController::class, 'index']);
+
+// Login for users
+Route::post('/login', [AuthenticationController::class, 'index']);
+
+Route::get('/mongo', [MongoTestController::class, 'mongoConnect']);
+
+Route::get('/check_auth', function(){
+    if(Auth::check())
+    {
+        dd("Login successfully");
+    }
+    else{
+        dd("Login false");
+    }
+});
